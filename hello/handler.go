@@ -30,3 +30,18 @@ func (s *HelloImpl) Echo(ctx context.Context, req *api.Request) (resp *api.Respo
 	resp = &api.Response{Message: req.Message}
 	return
 }
+
+// Add implements the HelloImpl interface.
+func (s *HelloImpl) Add(ctx context.Context, req *api.AddRequest) (resp *api.AddResponse, err error) {
+	// TODO: Your code here...
+	resp = &api.AddResponse{Sum: req.First + req.Second} // 这行不是生成的，是自己加的
+	return
+}
+
+type EchoImpl struct{}
+
+// Echo implements the EchoImpl interface.
+func (s *EchoImpl) Echo(ctx context.Context, req *api.Request) (resp *api.Response, err error) {
+	// TODO: Your code here...
+	return
+}
